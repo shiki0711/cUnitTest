@@ -1,0 +1,71 @@
+
+#define CMOCK_{% if noret %}NORET_{% endif %}FUNC{{ args }}(_functionName, {% if noret %}void{% else %}_retType{% endif %}{% for arg in argrange %}, argType{{ arg }}{% endfor %})  \
+    {% for arg in argrange %}char cmock_internal_matcher_##_functionName##_val_eq_arg{{ arg }}(argType{{ arg }} arg, argType{{ arg }} expect) {\
+        return (arg==expect);\
+    }{% endfor %}\
+    typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
+    struct _T_CMOCK_INTERNAL_##_functionName{ \
+        {% for arg in argrange %}argType{{ arg }} inArgValue{{ arg }}; {% endfor %} \
+        {% for arg in argrange %}char (*argValueMatcherCb{{ arg }})(argType{{ arg }}, argType{{ arg }}); {% endfor %}\
+        {% if noret %}void {% else %}_retType{% endif %} (*mockAction)({% for arg in argrange with , %}argType{{ arg }}{% endfor %});\
+        {% if noret %}{% else %}_retType defaultRetVal;{% endif %} \
+    }; \
+    {% if noret %}void{% else %}_retType{% endif %} _functionName({% for arg in argrange with , %}argType{{ arg }} arg{{ arg }}{% endfor %}) { \
+        const char *funcSignature = __func__;\
+        const char *sequenceVarName;\
+        T_DAG_VERTEX *pPathHead;\
+        CMOCK_S_EXPECT_CALL *pExpectCall;\
+        CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
+        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        int i;\
+        for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
+            DAG_FOREACH(dag_heads[i], pPathHead) {\
+                sequenceVarName = (const char *)pPathHead->data;\
+                DAG_PATH_FOREACH(pPathHead, pExpectCall){\
+                    pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
+                    if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
+                        if(pExpectCall->expectCallStatus == CMOCK_EXPECTCALL_RESULT_RETIRED) goto lable_continue;\
+                        {% for arg in argrange %}if(pMock->argValueMatcherCb{{ arg }}) {\
+                            if(!pMock->argValueMatcherCb{{ arg }}(arg{{ arg }}, pMock->inArgValue{{ arg }})) goto lable_continue;\
+                        }{% endfor %}\
+                        if(dag_heads[i] == &g_cmock_ctx->seq_dag) \
+                            if(!pExpectCall->sequenceNo) \
+                                pExpectCall->sequenceNo = ++g_cmock_ctx->curSequenceNo;\
+                        pExpectCall->expectCallStatus = pExpectCall->judgeExpectCalls(pExpectCall->expectCalls, ++pExpectCall->called);\
+                        switch(pExpectCall->expectCallStatus) {\
+                        case CMOCK_EXPECTCALL_RESULT_MATCHED:\
+                        if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        goto lable_matched;\
+                        break;\
+                        case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        goto lable_matched;\
+                        break;\
+                        case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        goto lable_continue;\
+                        break;\
+                        default:\
+                        cmock_ctx_fprintf(stderr, "<FATAL ERROR> Expect(%s) call of function(%s) in sequence(%s) fatal error, called times matcher callback should not return %d, abort!\n", \
+                                pExpectCall->expectVarName, pExpectCall->funcSignature, sequenceVarName, pExpectCall->expectCallStatus);\
+                        cmock_exit(1);\
+                        break;\
+                        }\
+                    }\
+                    lable_continue:\
+                    continue;\
+                }\
+            }\
+        }\
+        do{\
+            DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
+                if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
+                    pExpectCall->missmatch = 1;\
+                }\
+            }\
+        } while(0);\
+        return {% if noret %}{% else %}*(CMOCK_ALLOC_STACK(_retType)){% endif %};\
+        lable_matched:\
+        {% if noret %}if(pMock->mockAction) pMock->mockAction({% for arg in argrange with , %}arg{{ arg }}{% endfor %});\{% else %}if(pMock->mockAction) return pMock->mockAction({% for arg in argrange with , %}arg{{ arg }}{% endfor %});\
+        else return pMock->defaultRetVal;\{% endif %}
+    }
+

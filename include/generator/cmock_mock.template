@@ -1,0 +1,20 @@
+/*
+ * cmock_mock.h
+ *
+ *  Created on: 2016/6/14
+ *      Author: emit.yanfeng@gmail.com
+ */
+
+#ifndef INCLUDE_CMOCK_MOCK_H_
+#define INCLUDE_CMOCK_MOCK_H_
+
+#include "cmock_testcase_ctx.h"
+#include "cmock_expectcall.h"
+
+{% for _ in function_settings %}
+
+{% include cmock_mock_fuction_def.template %}
+
+{% endfor %}
+
+#endif /* INCLUDE_CMOCK_MOCK_H_ */
