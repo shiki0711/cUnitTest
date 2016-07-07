@@ -77,7 +77,15 @@ static inline int cmock_expectcalls_never(int expectCalls, int called) {
 
 #define CMOCK_EXPECTCALL_TIMES(funcname, var, func, expectCallTimes) \
     var.expectCalls = (expectCallTimes);\
-    var.judgeExpectCalls = (func);\
+    var.judgeExpectCalls = (func);
+
+#define CMOCK_EXPECTCALL_NEVER(funcname, var) \
+    var.judgeExpectCalls = cmock_expectcalls_never;\
+    var.expectCallStatus = CMOCK_EXPECTCALL_RESULT_MATCHED;
+
+#define CMOCK_EXPECTCALL_INFINITE(funcname, var) \
+    var.judgeExpectCalls = cmock_expectcalls_infinite;\
+    var.expectCallStatus = CMOCK_EXPECTCALL_RESULT_MATCHED;
 
 
 /* retire when matched */
@@ -141,31 +149,31 @@ static inline int cmock_expectcalls_never(int expectCalls, int called) {
     var.ignore = 0;\
     var.missmatch = 0;\
     do { \
-        T_DAG_VERTEX *vertex;\
+        CMOCK_S_DAG_VERTEX *vertex;\
         CMOCK_S_EXPECT_CALL *missmatchedCallBuffer = CMOCK_ALLOC_STACK(CMOCK_S_EXPECT_CALL);\
         cmock_memcpy(missmatchedCallBuffer, &(var), sizeof(CMOCK_S_EXPECT_CALL));\
-        vertex = CMOCK_ALLOC_STACK(T_DAG_VERTEX);\
-        dag_path_add(g_cmock_ctx->missmatch_expect_head, vertex, (void *)(missmatchedCallBuffer));\
-        vertex = CMOCK_ALLOC_STACK(T_DAG_VERTEX);\
-        dag_path_add(g_cmock_ctx->default_dag_path_head, vertex, (void *)(&var));\
-        CMOCK_EXPECTCALL_TIMES(funcname, var, cmock_expectcalls_infinite, 0);\
+        vertex = CMOCK_ALLOC_STACK(CMOCK_S_DAG_VERTEX);\
+        cmock_dag_path_add(g_cmock_ctx->missmatch_expect_head, vertex, (void *)(missmatchedCallBuffer));\
+        vertex = CMOCK_ALLOC_STACK(CMOCK_S_DAG_VERTEX);\
+        cmock_dag_path_add(g_cmock_ctx->defaulCMOCK_S_DAG_PATH_head, vertex, (void *)(&var));\
+        CMOCK_EXPECTCALL_INFINITE(funcname, var);\
     } while(0);
 
 /* create a new call sequence */
 #define CMOCK_EXPECTCALL_SEQUENCE(var) \
-    T_DAG_VERTEX var;\
-    dag_path_init(&(var));\
+    CMOCK_S_DAG_VERTEX var;\
+    cmock_dag_path_init(&(var));\
     (var).data = (void *)#var;\
     do { \
-        T_DAG_PATH *path = CMOCK_ALLOC_STACK(T_DAG_PATH);\
-        dag_add(&g_cmock_ctx->seq_dag, path, &(var));\
+        CMOCK_S_DAG_PATH *path = CMOCK_ALLOC_STACK(CMOCK_S_DAG_PATH);\
+        cmock_dag_add(&g_cmock_ctx->seq_dag, path, &(var));\
     } while(0);\
 
 /* add a CMOCK_S_EXPECT_CALL structure to a call sequence */
 #define CMOCK_EXPECTCALL_ADD(sequnce, expection) \
     do { \
-        T_DAG_VERTEX *vertex = CMOCK_ALLOC_STACK(T_DAG_VERTEX);\
-        dag_path_add(&sequnce, vertex, (void *)(&expection));\
+        CMOCK_S_DAG_VERTEX *vertex = CMOCK_ALLOC_STACK(CMOCK_S_DAG_VERTEX);\
+        cmock_dag_path_add(&sequnce, vertex, (void *)(&expection));\
         expection.ignore = 1;\
     } while(0);
 

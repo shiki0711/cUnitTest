@@ -36,13 +36,14 @@ void CMOCK_TESTCASE_FUNCTION_NAME(_testCaseName, _testName)(void) { \
     while(0);\
     int err = 0;\
     const char *sequenceVarName;\
-    T_DAG_VERTEX *pPathHead;\
+    CMOCK_S_DAG_VERTEX *pPathHead;\
     CMOCK_S_EXPECT_CALL *pExpectCallPrev,*pExpectCall;\
-    T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+    CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
     int i;\
     for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
         DAG_FOREACH(dag_heads[i], pPathHead) {\
-            sequenceVarName = (const char *)pPathHead->data;\
+            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+            else sequenceVarName = (const char *)pPathHead->data;\
             pExpectCallPrev = NULL;\
             DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                 if((dag_heads[i] == &g_cmock_ctx->default_dag) && pExpectCall->ignore) continue;\

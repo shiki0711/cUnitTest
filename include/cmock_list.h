@@ -9,24 +9,24 @@
 #define INCLUDE_CMOCK_LIST_H_
 
 
-typedef struct S_LIST_NODE {
-    struct S_LIST_NODE *prev;
-    struct S_LIST_NODE *next;
-} T_LIST_NODE;
+typedef struct _CMOCK_S_LIST_NODE{
+    struct _CMOCK_S_LIST_NODE *prev;
+    struct _CMOCK_S_LIST_NODE *next;
+} CMOCK_S_LIST_NODE;
 
 
-static inline void list_init(T_LIST_NODE* head) {
+static inline void cmock_list_init(CMOCK_S_LIST_NODE* head) {
     head->next = head;
     head->prev = head;
 }
 
 
-static inline int list_empty(T_LIST_NODE* head) {
+static inline int cmock_list_empty(CMOCK_S_LIST_NODE* head) {
     return (head->next == head);
 }
 
 
-static inline void list_insert(T_LIST_NODE* node, T_LIST_NODE* p, T_LIST_NODE* n) {
+static inline void cmock_list_insert(CMOCK_S_LIST_NODE* node, CMOCK_S_LIST_NODE* p, CMOCK_S_LIST_NODE* n) {
     node->next = n;
     node->prev = p;
     p->next = node;
@@ -34,37 +34,37 @@ static inline void list_insert(T_LIST_NODE* node, T_LIST_NODE* p, T_LIST_NODE* n
 }
 
 
-static inline T_LIST_NODE* list_delete(T_LIST_NODE* node, T_LIST_NODE* p, T_LIST_NODE* n) {
+static inline CMOCK_S_LIST_NODE* cmock_list_delete(CMOCK_S_LIST_NODE* node, CMOCK_S_LIST_NODE* p, CMOCK_S_LIST_NODE* n) {
     p->next = node->next;
     n->prev = node->prev;
     return node;
 }
 
 
-static inline void list_insert_tail(T_LIST_NODE* node, T_LIST_NODE* head) {
-    list_insert(node, head->prev, head);
+static inline void cmock_list_insert_tail(CMOCK_S_LIST_NODE* node, CMOCK_S_LIST_NODE* head) {
+    cmock_list_insert(node, head->prev, head);
 }
 
 
-static inline void list_insert_head(T_LIST_NODE* node, T_LIST_NODE* head) {
-    list_insert(node, head, head->next);
+static inline void cmock_list_insert_head(CMOCK_S_LIST_NODE* node, CMOCK_S_LIST_NODE* head) {
+    cmock_list_insert(node, head, head->next);
 }
 
 
-static inline T_LIST_NODE* list_delete_tail(T_LIST_NODE* head) {
-    return list_delete(head->prev, head->prev->prev, head);
+static inline CMOCK_S_LIST_NODE* cmock_list_delete_tail(CMOCK_S_LIST_NODE* head) {
+    return cmock_list_delete(head->prev, head->prev->prev, head);
 }
 
 
-static inline T_LIST_NODE* list_delete_head(T_LIST_NODE* head) {
-    return list_delete(head->next, head, head->next->next);
+static inline CMOCK_S_LIST_NODE* cmock_list_delete_head(CMOCK_S_LIST_NODE* head) {
+    return cmock_list_delete(head->next, head, head->next->next);
 }
 
 
-#define list_for_each(head, pNode, pTmp) \
+#define cmock_list_for_each(head, pNode, pTmp) \
     for((pNode)=(head)->next, (pTmp)=(pNode)->next; (pNode)!=(head); (pNode)=(pTmp), (pTmp)=(pTmp)->next)
 
-#define list_for_each_ext(head, pNode, pTmp, ext) \
+#define cmock_list_for_each_ext(head, pNode, pTmp, ext) \
     for((pNode)=(head)->next, (pTmp)=(pNode)->next, ext; (pNode)!=(head); (pNode)=(pTmp), (pTmp)=(pTmp)->next, ext)
 
 #endif /* INCLUDE_CMOCK_LIST_H_ */

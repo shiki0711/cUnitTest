@@ -25,15 +25,16 @@
     }; \
     void _functionName() { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -94,15 +95,16 @@
     }; \
     _retType _functionName() { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -166,15 +168,16 @@
     }; \
     void _functionName(argType1 arg1) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -239,15 +242,16 @@
     }; \
     _retType _functionName(argType1 arg1) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -315,15 +319,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -392,15 +397,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -472,15 +478,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -553,15 +560,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -637,15 +645,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -722,15 +731,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -810,15 +820,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -899,15 +910,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -991,15 +1003,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1084,15 +1097,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1180,15 +1194,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1277,15 +1292,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1377,15 +1393,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1478,15 +1495,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1582,15 +1600,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1687,15 +1706,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1795,15 +1815,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -1904,15 +1925,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2016,15 +2038,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2129,15 +2152,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2245,15 +2269,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2362,15 +2387,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2482,15 +2508,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2603,15 +2630,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2727,15 +2755,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2852,15 +2881,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -2980,15 +3010,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3109,15 +3140,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3241,15 +3273,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3374,15 +3407,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3510,15 +3544,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16,argType17 arg17) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3647,15 +3682,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16,argType17 arg17) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3787,15 +3823,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16,argType17 arg17,argType18 arg18) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -3928,15 +3965,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16,argType17 arg17,argType18 arg18) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -4072,15 +4110,16 @@
     }; \
     void _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16,argType17 arg17,argType18 arg18,argType19 arg19) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
@@ -4217,15 +4256,16 @@
     }; \
     _retType _functionName(argType1 arg1,argType2 arg2,argType3 arg3,argType4 arg4,argType5 arg5,argType6 arg6,argType7 arg7,argType8 arg8,argType9 arg9,argType10 arg10,argType11 arg11,argType12 arg12,argType13 arg13,argType14 arg14,argType15 arg15,argType16 arg16,argType17 arg17,argType18 arg18,argType19 arg19) { \
         const char *funcSignature = __func__;\
-        const char *sequenceVarName;\
-        T_DAG_VERTEX *pPathHead;\
+        char *sequenceVarName;\
+        CMOCK_S_DAG_VERTEX *pPathHead;\
         CMOCK_S_EXPECT_CALL *pExpectCall;\
         CMOCK_INTERNAL_MOCK_TYPE(_functionName) *pMock;\
-        T_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
+        CMOCK_S_DAG_PATH *dag_heads[] = {&g_cmock_ctx->seq_dag, &g_cmock_ctx->default_dag};\
         int i;\
         for(i=0; i<sizeof(dag_heads)/sizeof(dag_heads[0]); i++) {\
             DAG_FOREACH(dag_heads[i], pPathHead) {\
-                sequenceVarName = (const char *)pPathHead->data;\
+	            if(dag_heads[i] == &g_cmock_ctx->default_dag) sequenceVarName = "None";\
+	            else sequenceVarName = (char *)pPathHead->data;\
                 DAG_PATH_FOREACH(pPathHead, pExpectCall){\
                     pMock = (CMOCK_INTERNAL_MOCK_TYPE(_functionName) *)(pExpectCall->mock);\
                     if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\

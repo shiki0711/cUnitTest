@@ -14,62 +14,62 @@
 #define container_of(type, member, p) \
     (type *)((char *)(p)-cmock_offsetof(type, member))
 
-typedef struct S_DAG_VERTEX {
-    T_LIST_NODE edge;
+typedef struct {
+    CMOCK_S_LIST_NODE edge;
     void *data;
-} T_DAG_VERTEX;
+} CMOCK_S_DAG_VERTEX;
 
 
-typedef struct S_DAG_PATH {
-    T_LIST_NODE path_node;
-    T_DAG_VERTEX *path_head;
-} T_DAG_PATH;
+typedef struct {
+    CMOCK_S_LIST_NODE path_node;
+    CMOCK_S_DAG_VERTEX *path_head;
+} CMOCK_S_DAG_PATH;
 
 
 
-static inline void dag_path_init(T_DAG_VERTEX *head) {
-    list_init(&head->edge);
+static inline void cmock_dag_path_init(CMOCK_S_DAG_VERTEX *head) {
+    cmock_list_init(&head->edge);
     head->data = NULL;
 }
 
-static inline void dag_path_add(T_DAG_VERTEX *head, T_DAG_VERTEX *vertex, void *data) {
-    list_insert_tail(&vertex->edge, &head->edge);
+static inline void cmock_dag_path_add(CMOCK_S_DAG_VERTEX *head, CMOCK_S_DAG_VERTEX *vertex, void *data) {
+    cmock_list_insert_tail(&vertex->edge, &head->edge);
     vertex->data = data;
 }
 
-static inline void dag_init(T_DAG_PATH *head) {
-    list_init(&head->path_node);
+static inline void cmock_dag_init(CMOCK_S_DAG_PATH *head) {
+    cmock_list_init(&head->path_node);
     head->path_head = NULL;
 }
 
-static inline void dag_add(T_DAG_PATH *head, T_DAG_PATH *node, T_DAG_VERTEX *path_head) {
-    list_insert_tail(&node->path_node, &head->path_node);
+static inline void cmock_dag_add(CMOCK_S_DAG_PATH *head, CMOCK_S_DAG_PATH *node, CMOCK_S_DAG_VERTEX *path_head) {
+    cmock_list_insert_tail(&node->path_node, &head->path_node);
     node->path_head = path_head;
 }
 
 
 #define DAG_FOREACH(pHead, pPathHead) \
-    T_LIST_NODE *$(pNode), *$(pTmp);\
-    list_for_each_ext(&(pHead)->path_node, $(pNode), $(pTmp), pPathHead = (container_of(T_DAG_PATH, path_node, $(pNode)))->path_head)
+    CMOCK_S_LIST_NODE *$(pNode), *$(pTmp);\
+    cmock_list_for_each_ext(&(pHead)->path_node, $(pNode), $(pTmp), pPathHead = (container_of(CMOCK_S_DAG_PATH, path_node, $(pNode)))->path_head)
 
 
 #define DAG_PATH_FOREACH(pPathHead, pExpectCall) \
-    T_LIST_NODE *$(pNode), *$(pTmp);\
-    list_for_each_ext(&(pPathHead)->edge, $(pNode), $(pTmp), pExpectCall = (container_of(T_DAG_VERTEX, edge, $(pNode)))->data)
+    CMOCK_S_LIST_NODE *$(pNode), *$(pTmp);\
+    cmock_list_for_each_ext(&(pPathHead)->edge, $(pNode), $(pTmp), pExpectCall = (container_of(CMOCK_S_DAG_VERTEX, edge, $(pNode)))->data)
 
 
 #define DAG_MAP(head, func, userdata) \
     do { \
-        T_LIST_NODE *$(pNode1), *$(pNode2), *$(pTmp1), *$(pTmp2);\
-        T_DAG_PATH *$(path);\
-        T_DAG_VERTEX *$(path_head), *$(vertex);\
+        CMOCK_S_LIST_NODE *$(pNode1), *$(pNode2), *$(pTmp1), *$(pTmp2);\
+        CMOCK_S_DAG_PATH *$(path);\
+        CMOCK_S_DAG_VERTEX *$(path_head), *$(vertex);\
         void *$(data);\
-        list_for_each(&(head)->path_node, $(pNode1), $(pTmp1)) { \
-            $(path) = container_of(T_DAG_PATH, path_node, $(pNode1));\
+        cmock_list_for_each(&(head)->path_node, $(pNode1), $(pTmp1)) { \
+            $(path) = container_of(CMOCK_S_DAG_PATH, path_node, $(pNode1));\
             $(path_head) = $(path)->path_head; \
             printf("path_head=%p\n", $(path_head));\
-            list_for_each(&($(path_head)->edge), $(pNode2), $(pTmp2)) { \
-                $(vertex) = container_of(T_DAG_VERTEX, edge, $(pNode2));\
+            cmock_list_for_each(&($(path_head)->edge), $(pNode2), $(pTmp2)) { \
+                $(vertex) = container_of(CMOCK_S_DAG_VERTEX, edge, $(pNode2));\
                 $(data) = $(vertex)->data;\
                 printf("data=%p\n", $(data));\
                 func($(data), (userdata));\
