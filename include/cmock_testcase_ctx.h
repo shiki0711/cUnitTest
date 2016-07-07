@@ -12,27 +12,27 @@
 #include "cmock_utility.h"
 
 typedef struct {
-    T_DAG_PATH seq_dag;
-    T_DAG_PATH default_dag;
-    T_DAG_VERTEX *default_dag_path_head;
-    T_DAG_VERTEX *missmatch_expect_head;
+    CMOCK_S_DAG_PATH seq_dag;
+    CMOCK_S_DAG_PATH default_dag;
+    CMOCK_S_DAG_VERTEX *defaulCMOCK_S_DAG_PATH_head;
+    CMOCK_S_DAG_VERTEX *missmatch_expect_head;
     int curSequenceNo;
     const char* testCaseName;
     const char* testName;
 } CMOCK_S_TESTCASE_CTX;
 
 #define CMOCK_TESTCASE_CTX_INIT(_testCaseName, _testName) \
-    dag_init(&g_cmock_ctx->seq_dag);\
-    dag_init(&g_cmock_ctx->default_dag);\
+    cmock_dag_init(&g_cmock_ctx->seq_dag);\
+    cmock_dag_init(&g_cmock_ctx->default_dag);\
     do { \
-        T_DAG_PATH *path = CMOCK_ALLOC_STACK(T_DAG_PATH);\
-        T_DAG_VERTEX *edge_head = CMOCK_ALLOC_STACK(T_DAG_VERTEX);\
-        dag_path_init(edge_head);\
-        dag_add(&g_cmock_ctx->default_dag, path, edge_head);\
-        g_cmock_ctx->default_dag_path_head = edge_head;\
+        CMOCK_S_DAG_PATH *path = CMOCK_ALLOC_STACK(CMOCK_S_DAG_PATH);\
+        CMOCK_S_DAG_VERTEX *edge_head = CMOCK_ALLOC_STACK(CMOCK_S_DAG_VERTEX);\
+        cmock_dag_path_init(edge_head);\
+        cmock_dag_add(&g_cmock_ctx->default_dag, path, edge_head);\
+        g_cmock_ctx->defaulCMOCK_S_DAG_PATH_head = edge_head;\
     } while(0);\
-    g_cmock_ctx->missmatch_expect_head = CMOCK_ALLOC_STACK(T_DAG_VERTEX);\
-    dag_path_init(g_cmock_ctx->missmatch_expect_head);\
+    g_cmock_ctx->missmatch_expect_head = CMOCK_ALLOC_STACK(CMOCK_S_DAG_VERTEX);\
+    cmock_dag_path_init(g_cmock_ctx->missmatch_expect_head);\
     g_cmock_ctx->curSequenceNo = 0;\
     g_cmock_ctx->testCaseName = #_testCaseName;\
     g_cmock_ctx->testName = #_testName;
