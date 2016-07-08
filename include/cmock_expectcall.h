@@ -77,7 +77,8 @@ static inline int cmock_expectcalls_never(int expectCalls, int called) {
 
 #define CMOCK_EXPECTCALL_TIMES(funcname, var, func, expectCallTimes) \
     var.expectCalls = (expectCallTimes);\
-    var.judgeExpectCalls = (func);
+    var.judgeExpectCalls = (func);\
+    var.expectCallStatus = CMOCK_EXPECTCALL_RESULT_INIT;
 
 #define CMOCK_EXPECTCALL_NEVER(funcname, var) \
     var.judgeExpectCalls = cmock_expectcalls_never;\

@@ -69,11 +69,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -139,11 +142,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -214,11 +220,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -288,11 +297,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -367,11 +379,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -445,11 +460,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -528,11 +546,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -610,11 +631,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -697,11 +721,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -783,11 +810,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -874,11 +904,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -964,11 +997,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -1059,11 +1095,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -1153,11 +1192,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -1252,11 +1294,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -1350,11 +1395,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -1453,11 +1501,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -1555,11 +1606,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -1662,11 +1716,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -1768,11 +1825,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -1879,11 +1939,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -1989,11 +2052,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -2104,11 +2170,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -2218,11 +2287,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -2337,11 +2409,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -2455,11 +2530,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -2578,11 +2656,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -2700,11 +2781,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -2827,11 +2911,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -2953,11 +3040,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -3084,11 +3174,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -3214,11 +3307,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -3349,11 +3445,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -3483,11 +3582,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -3622,11 +3724,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -3760,11 +3865,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -3903,11 +4011,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -4045,11 +4156,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
@@ -4192,11 +4306,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return ;\
         lable_matched:\
@@ -4338,11 +4455,14 @@
             }\
         }\
         do{\
+            int found = 0;\
             DAG_PATH_FOREACH(g_cmock_ctx->missmatch_expect_head, pExpectCall){\
                 if(cmock_strcmp(funcSignature, pExpectCall->funcSignature) == 0) {\
                     pExpectCall->missmatch = 1;\
+                    found = 1;\
                 }\
             }\
+            if(!found) cmock_ctx_fprintf(stderr, "<WARNING> call of function(%s) with none of any installing expectation!\n", funcSignature);\
         } while(0);\
         return *(CMOCK_ALLOC_STACK(_retType));\
         lable_matched:\
