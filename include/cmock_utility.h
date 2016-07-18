@@ -20,6 +20,7 @@
 #define cmock_strcmp    strcmp
 #define cmock_memset    memset
 #define cmock_memcpy    memcpy
+#define cmock_memcmp    memcmp
 #define cmock_exit      exit
 #define cmock_offsetof  offsetof
 #else

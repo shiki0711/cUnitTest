@@ -1,7 +1,7 @@
 
 #define CMOCK_{% if noret %}NORET_{% endif %}FUNC{{ args }}(_functionName, {% if noret %}void{% else %}_retType{% endif %}{% for arg in argrange %}, argType{{ arg }}{% endfor %})  \
     {% for arg in argrange %}char cmock_internal_matcher_##_functionName##_val_eq_arg{{ arg }}(argType{{ arg }} arg, argType{{ arg }} expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }{% endfor %}\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \

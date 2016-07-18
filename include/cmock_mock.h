@@ -163,7 +163,7 @@
 
 #define CMOCK_NORET_FUNC1(_functionName, void, argType1)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -240,7 +240,7 @@
 
 #define CMOCK_FUNC1(_functionName, _retType, argType1)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -318,9 +318,9 @@
 
 #define CMOCK_NORET_FUNC2(_functionName, void, argType1, argType2)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -399,9 +399,9 @@
 
 #define CMOCK_FUNC2(_functionName, _retType, argType1, argType2)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -481,11 +481,11 @@
 
 #define CMOCK_NORET_FUNC3(_functionName, void, argType1, argType2, argType3)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -566,11 +566,11 @@
 
 #define CMOCK_FUNC3(_functionName, _retType, argType1, argType2, argType3)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -652,13 +652,13 @@
 
 #define CMOCK_NORET_FUNC4(_functionName, void, argType1, argType2, argType3, argType4)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -741,13 +741,13 @@
 
 #define CMOCK_FUNC4(_functionName, _retType, argType1, argType2, argType3, argType4)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -831,15 +831,15 @@
 
 #define CMOCK_NORET_FUNC5(_functionName, void, argType1, argType2, argType3, argType4, argType5)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -924,15 +924,15 @@
 
 #define CMOCK_FUNC5(_functionName, _retType, argType1, argType2, argType3, argType4, argType5)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1018,17 +1018,17 @@
 
 #define CMOCK_NORET_FUNC6(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1115,17 +1115,17 @@
 
 #define CMOCK_FUNC6(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1213,19 +1213,19 @@
 
 #define CMOCK_NORET_FUNC7(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1314,19 +1314,19 @@
 
 #define CMOCK_FUNC7(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1416,21 +1416,21 @@
 
 #define CMOCK_NORET_FUNC8(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1521,21 +1521,21 @@
 
 #define CMOCK_FUNC8(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1627,23 +1627,23 @@
 
 #define CMOCK_NORET_FUNC9(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1736,23 +1736,23 @@
 
 #define CMOCK_FUNC9(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1846,25 +1846,25 @@
 
 #define CMOCK_NORET_FUNC10(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -1959,25 +1959,25 @@
 
 #define CMOCK_FUNC10(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2073,27 +2073,27 @@
 
 #define CMOCK_NORET_FUNC11(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2190,27 +2190,27 @@
 
 #define CMOCK_FUNC11(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2308,29 +2308,29 @@
 
 #define CMOCK_NORET_FUNC12(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2429,29 +2429,29 @@
 
 #define CMOCK_FUNC12(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2551,31 +2551,31 @@
 
 #define CMOCK_NORET_FUNC13(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2676,31 +2676,31 @@
 
 #define CMOCK_FUNC13(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2802,33 +2802,33 @@
 
 #define CMOCK_NORET_FUNC14(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -2931,33 +2931,33 @@
 
 #define CMOCK_FUNC14(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3061,35 +3061,35 @@
 
 #define CMOCK_NORET_FUNC15(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3194,35 +3194,35 @@
 
 #define CMOCK_FUNC15(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3328,37 +3328,37 @@
 
 #define CMOCK_NORET_FUNC16(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3465,37 +3465,37 @@
 
 #define CMOCK_FUNC16(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3603,39 +3603,39 @@
 
 #define CMOCK_NORET_FUNC17(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16, argType17)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg17(argType17 arg, argType17 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3744,39 +3744,39 @@
 
 #define CMOCK_FUNC17(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16, argType17)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg17(argType17 arg, argType17 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -3886,41 +3886,41 @@
 
 #define CMOCK_NORET_FUNC18(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16, argType17, argType18)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg17(argType17 arg, argType17 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg18(argType18 arg, argType18 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -4031,41 +4031,41 @@
 
 #define CMOCK_FUNC18(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16, argType17, argType18)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg17(argType17 arg, argType17 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg18(argType18 arg, argType18 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -4177,43 +4177,43 @@
 
 #define CMOCK_NORET_FUNC19(_functionName, void, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16, argType17, argType18, argType19)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg17(argType17 arg, argType17 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg18(argType18 arg, argType18 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg19(argType19 arg, argType19 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \
@@ -4326,43 +4326,43 @@
 
 #define CMOCK_FUNC19(_functionName, _retType, argType1, argType2, argType3, argType4, argType5, argType6, argType7, argType8, argType9, argType10, argType11, argType12, argType13, argType14, argType15, argType16, argType17, argType18, argType19)  \
     char cmock_internal_matcher_##_functionName##_val_eq_arg1(argType1 arg, argType1 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg2(argType2 arg, argType2 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg3(argType3 arg, argType3 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg4(argType4 arg, argType4 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg5(argType5 arg, argType5 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg6(argType6 arg, argType6 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg7(argType7 arg, argType7 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg8(argType8 arg, argType8 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg9(argType9 arg, argType9 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg10(argType10 arg, argType10 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg11(argType11 arg, argType11 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg12(argType12 arg, argType12 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg13(argType13 arg, argType13 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg14(argType14 arg, argType14 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg15(argType15 arg, argType15 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg16(argType16 arg, argType16 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg17(argType17 arg, argType17 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg18(argType18 arg, argType18 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }char cmock_internal_matcher_##_functionName##_val_eq_arg19(argType19 arg, argType19 expect) {\
-        return (arg==expect);\
+        return (!(cmock_memcmp(&(arg), &(expect), sizeof(arg))));\
     }\
     typedef struct _T_CMOCK_INTERNAL_##_functionName CMOCK_INTERNAL_MOCK_TYPE(_functionName);\
     struct _T_CMOCK_INTERNAL_##_functionName{ \

@@ -37,11 +37,28 @@ def mock_cursor_str(funcname,argno,cursor):
     #print result
     return result
 
+def is_cursor_in_source(filepath, cursor):
+    '''
+    a cursor location string format like this:
+    <SourceLocation file 'path/to/file/include.h', line 376, column 3>
+    '''
+    location = str(cursor.location).split(' ')[2][1:-2]
+    #print location
+    if filepath == location:
+        return True
+    else:
+        return False
+
 if __name__ == '__main__':
     filepath = sys.argv[1]
-    tu = TranslationUnit.from_source(filepath, ['-Wall'])
+    print 'parsing file '+filepath
+    opts = ['-Wall']
+    for argv in sys.argv[2:]:
+        opts.append(argv)
+    tu = TranslationUnit.from_source(filepath, opts)
+    fp = open(filepath.split('/')[-1]+'_mock.c', 'w')
     for fc in tu.cursor.get_children():
-        if fc.kind.is_declaration():
+        if fc.kind.is_declaration() and is_cursor_in_source(filepath, fc):
             if fc.kind == CursorKind.FUNCTION_DECL:
                 func_name = fc.spelling
                 ret_type = mock_type_str(func_name,0,fc.result_type)
@@ -69,8 +86,12 @@ if __name__ == '__main__':
                     mocker_str += ','
                     mocker_str += arg_type[1]
                 mocker_str += ');'
-                print typedef_str
-                print mocker_str
+                if typedef_str != '':
+                    fp.write(typedef_str)
+                fp.write(mocker_str)
+                fp.write('\n')
+                #print typedef_str
+                #print mocker_str
 
     
 

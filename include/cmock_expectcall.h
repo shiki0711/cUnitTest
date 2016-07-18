@@ -111,9 +111,10 @@ static inline int cmock_expectcalls_never(int expectCalls, int called) {
 
 
 /* expect input args */
-#define CMOCK_EXPECTCALL_ARG_MATCHER(funcname, var, argNo, func) \
+#define CMOCK_EXPECTCALL_ARG_MATCHER(funcname, var, argNo, func, val) \
     do { \
         CMOCK_INTERNAL_MOCK_TYPE(funcname) *mock = var.mock;\
+        mock->inArgValue##argNo = (val);\
         mock->argValueMatcherCb##argNo = (func);\
     } while(0);
 
