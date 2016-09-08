@@ -47,13 +47,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -120,13 +124,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -198,13 +206,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -275,13 +287,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -357,13 +373,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -438,13 +458,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -524,13 +548,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -609,13 +637,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -699,13 +731,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -788,13 +824,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -882,13 +922,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -975,13 +1019,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1073,13 +1121,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1170,13 +1222,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1272,13 +1328,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1373,13 +1433,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1479,13 +1543,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1584,13 +1652,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1694,13 +1766,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1803,13 +1879,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -1917,13 +1997,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2030,13 +2114,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2148,13 +2236,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2265,13 +2357,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2387,13 +2483,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2508,13 +2608,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2634,13 +2738,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2759,13 +2867,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -2889,13 +3001,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3018,13 +3134,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3152,13 +3272,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3285,13 +3409,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3423,13 +3551,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3560,13 +3692,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3702,13 +3838,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3843,13 +3983,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -3989,13 +4133,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -4134,13 +4282,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -4284,13 +4436,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\
@@ -4433,13 +4589,17 @@
                         switch(pExpectCall->expectCallStatus) {\
                         case CMOCK_EXPECTCALL_RESULT_MATCHED:\
                         if(pExpectCall->retireWhenMatched) pExpectCall->expectCallStatus = CMOCK_EXPECTCALL_RESULT_RETIRED;\
+                        cmock_debug("Expect(%s) call of function(%s) matched\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_PENDING:\
+                        cmock_debug("Expect(%s) call of function(%s) pending\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         case CMOCK_EXPECTCALL_RESULT_FAILED:\
+                        cmock_debug("Expect(%s) call of function(%s) failed\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_matched;\
                         break;\
                         case CMOCK_EXPECTCALL_RESULT_RETIRED:\
+                        cmock_debug("Expect(%s) call of function(%s) retired\n", pExpectCall->expectVarName, pExpectCall->funcSignature);\
                         goto lable_continue;\
                         break;\
                         default:\

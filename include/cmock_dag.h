@@ -37,6 +37,16 @@ static inline void cmock_dag_path_add(CMOCK_S_DAG_VERTEX *head, CMOCK_S_DAG_VERT
     vertex->data = data;
 }
 
+static inline void cmock_dag_path_del(CMOCK_S_DAG_VERTEX *head, void *data) {
+    CMOCK_S_LIST_NODE *pNode,*pTmp;
+    CMOCK_S_DAG_VERTEX *curData;
+    cmock_list_for_each(&head->edge, pNode, pTmp){
+        curData = container_of(CMOCK_S_DAG_VERTEX, edge, pNode);
+        if(curData->data == data) break;
+    }
+    cmock_list_delete(&(curData->edge), curData->edge.prev, curData->edge.next);
+}
+
 static inline void cmock_dag_init(CMOCK_S_DAG_PATH *head) {
     cmock_list_init(&head->path_node);
     head->path_head = NULL;

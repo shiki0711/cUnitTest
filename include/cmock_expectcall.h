@@ -19,7 +19,7 @@
 #define CMOCK_EXPECTCALL_RESULT_FAILED      (0x03)
 #define CMOCK_EXPECTCALL_RESULT_RETIRED     (0x04)
 
-
+typedef CMOCK_S_DAG_VERTEX  CMOCK_S_SEQUENCE;
 
 typedef struct __s_cmock_expect_call__ {
     char *funcSignature;
@@ -76,17 +76,17 @@ static inline int cmock_expectcalls_never(int expectCalls, int called) {
 }
 
 #define CMOCK_EXPECTCALL_TIMES(funcname, var, func, expectCallTimes) \
-    var.expectCalls = (expectCallTimes);\
-    var.judgeExpectCalls = (func);\
-    var.expectCallStatus = CMOCK_EXPECTCALL_RESULT_INIT;
+    (var).expectCalls = (expectCallTimes);\
+    (var).judgeExpectCalls = (func);\
+    (var).expectCallStatus = CMOCK_EXPECTCALL_RESULT_INIT;
 
 #define CMOCK_EXPECTCALL_NEVER(funcname, var) \
-    var.judgeExpectCalls = cmock_expectcalls_never;\
-    var.expectCallStatus = CMOCK_EXPECTCALL_RESULT_MATCHED;
+    (var).judgeExpectCalls = cmock_expectcalls_never;\
+    (var).expectCallStatus = CMOCK_EXPECTCALL_RESULT_MATCHED;
 
 #define CMOCK_EXPECTCALL_INFINITE(funcname, var) \
-    var.judgeExpectCalls = cmock_expectcalls_infinite;\
-    var.expectCallStatus = CMOCK_EXPECTCALL_RESULT_MATCHED;
+    (var).judgeExpectCalls = cmock_expectcalls_infinite;\
+    (var).expectCallStatus = CMOCK_EXPECTCALL_RESULT_MATCHED;
 
 
 /* retire when matched */
@@ -177,6 +177,12 @@ static inline int cmock_expectcalls_never(int expectCalls, int called) {
         CMOCK_S_DAG_VERTEX *vertex = CMOCK_ALLOC_STACK(CMOCK_S_DAG_VERTEX);\
         cmock_dag_path_add(&sequnce, vertex, (void *)(&expection));\
         expection.ignore = 1;\
+    } while(0);
+
+/* delete a CMOCK_S_EXPECT_CALL structure from a call sequence */
+#define CMOCK_EXPECTCALL_DEL(sequnce, expection) \
+    do { \
+        cmock_dag_path_del(&sequnce, (void *)(&expection));\
     } while(0);
 
 

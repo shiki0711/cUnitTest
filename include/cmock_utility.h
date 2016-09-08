@@ -48,5 +48,10 @@
 #define CMOCK_ANONYMOUS_VAR(var)    CMOCK_CONCAT(var, __LINE__)
 #define $(var)                      CMOCK_ANONYMOUS_VAR(var)
 
+#ifdef CMOCK_DEBUG
+#define cmock_debug(...)            cmock_fprintf(stderr, "CMOCK [DEBUG]: "__VA_ARGS__)
+#else
+#define cmock_debug(...)
+#endif
 
 #endif /* INCLUDE_CMOCK_UTILITY_H_ */
